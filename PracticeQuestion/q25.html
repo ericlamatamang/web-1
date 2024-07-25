@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="sumOutput"></div>
+    <script>
+        // Create an array of numbers
+let numbers = [5, 10, 15, 20, 10];
+
+// Initialize a variable to store the sum
+let sum = 0;
+
+// Loop through the array and add each element to the sum
+for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+
+// Output the sum to the webpage
+document.getElementById("sumOutput").textContent = "The sum of all elements in the array is: " + sum;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <button type="button" onclick="validateForm()">Submit</button>
+      </form>
+    
+      <div id="errorMessages"></div>
+      <script>
+
+        function validateForm() {
+  // Get form inputs
+  
+  let emailInput = document.getElementById("email").value;
+
+  // Initialize error message
+  let errorMessage = "";
+
+  
+  // Check if email field is empty
+  if (emailInput === "") {
+    errorMessage += "Email is required.<br>";
+  } else {
+    // Regular expression for email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Check if email is valid
+    if (!emailPattern.test(emailInput)) {
+      errorMessage += "Invalid email address.<br>";
+    }
+  }
+
+  // Display error message or submit form
+  if (errorMessage !== "") {
+    document.getElementById("errorMessages").innerHTML = errorMessage;
+  } else {
+    // If no errors, submit the form (you can add your own logic here)
+    alert("Form submitted successfully!");
+    document.getElementById("myForm").reset(); // Optional: Reset form after submission
+  }
+}
+
+      </script>
+</body>
+</html>

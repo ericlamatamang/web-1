@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="max"></div>
+    <div id="min"></div>
+
+
+    <script>
+        // Create an array of numbers
+let numbers = [5, 10, 15, 20, 25];
+
+// Initialize variables to store the maximum and minimum values
+let max = numbers[0];
+let min = numbers[0];
+
+// Loop through the array to find the maximum and minimum values
+for (let i = 1; i < numbers.length; i++) {
+  if (numbers[i] > max) {
+    max = numbers[i];
+  }
+  if (numbers[i] < min) {
+    min = numbers[i];
+  }
+}
+
+// Output the maximum and minimum values
+document.getElementById("max").textContent="Maximum value in the array: " + max;
+document.getElementById("min").textContent="Minimun value in the array: " + min;
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <span id="usernameError" class="error"></span>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span id="passwordError" class="error"></span>
+    </div>
+    <div>
+      <label for="country">Country:</label>
+      <select id="country" name="country" required>
+        <option value="">Select</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Canada">Canada</option>
+        <!-- Add more countries as needed -->
+      </select>
+      <span id="countryError" class="error"></span>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const country = document.getElementById('country').value;
+
+      // Validate username
+      if (username.length !== 8) {
+        document.getElementById('usernameError').textContent = "Username must be 8 characters long";
+        return false;
+      } else {
+        document.getElementById('usernameError').textContent = "";
+      }
+
+      // Validate password
+      if (!/^\d/.test(password)||password.length<=8) {
+        document.getElementById('passwordError').textContent = "Password must start with a digit and atlest 8 digits";
+        return false;
+      } else if (!/^[a-zA-Z0-9]+$/.test(password)) {
+        document.getElementById('passwordError').textContent = "Password must be alphanumeric";
+        return false;
+      } else {
+        document.getElementById('passwordError').textContent = "";
+      }
+     
+
+    
+
+      // Validate country
+      if (country === "") {
+        document.getElementById('countryError').textContent = "Please select a country";
+        return false;
+      } else {
+        document.getElementById('countryError').textContent = "";
+      }
+
+      // Form is valid
+      return true;
+    }
+  </script>
+</body>
+</html>

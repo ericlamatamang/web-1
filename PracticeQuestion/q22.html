@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switch Case Example</title>
+</head>
+<body>
+
+<label for="dayInput">Enter a day:</label>
+<input type="text" id="dayInput">
+<button onclick="showMessage()">submit</button>
+
+<p id="output"></p>
+
+<script>
+function showMessage() {
+  // Get the value from the input field
+  let day = document.getElementById("dayInput").value;
+
+  // Implementing switch-case statement
+  switch (day) {
+    case "Monday":
+      document.getElementById("output").innerText = "It's Monday. Start of the week.";
+      break;
+    case "Tuesday":
+      document.getElementById("output").innerText = "It's Tuesday. Getting into the groove.";
+      break;
+    case "Wednesday":
+      document.getElementById("output").innerText = "It's Wednesday. Halfway through the week.";
+      break;
+    case "Thursday":
+      document.getElementById("output").innerText = "It's Thursday. Almost there!";
+      break;
+    case "Friday":
+      document.getElementById("output").innerText = "It's Friday. Time to celebrate!";
+      break;
+    case "Saturday":
+      document.getElementById("output").innerText = "It's Saturday. Enjoy the weekend!";
+      break;
+    case "Sunday":
+      document.getElementById("output").innerText = "It's Sunday. Relax and recharge.";
+      break;
+    default:
+      document.getElementById("output").innerText = "Invalid day!";
+  }
+}
+</script>
+
+</body>
+</html>
