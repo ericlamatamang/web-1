@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dateTimeOutput"></div>
+    <script>
+        // Get the current date and time
+let currentDate = new Date();
+
+// Format the date and time in a human-readable format
+let formattedDateTime = currentDate.toLocaleString();
+
+// Output the formatted date and time to the webpage
+let dateTimeOutputDiv = document.getElementById("dateTimeOutput");
+dateTimeOutputDiv.textContent = "Current date and time: " + formattedDateTime;
+
+    </script>
+</body>
+</html>

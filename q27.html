@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates from Array</title>
+    <script>
+        function removeDuplicates(arr) {
+            return [...new Set(arr)];
+        }
+
+        function processArray() {
+            const input = document.getElementById('arrayInput').value;
+            const arrayWithDuplicates = input.split(',').map(Number);
+            const arrayWithoutDuplicates = removeDuplicates(arrayWithDuplicates);
+            document.getElementById('result').textContent = 'Array without duplicates: ' + arrayWithoutDuplicates.join(', ');
+        }
+    </script>
+</head>
+<body>
+    <h1>Remove Duplicates from Array</h1>
+    <label for="arrayInput">Enter array elements (comma separated):</label>
+    <input type="text" id="arrayInput" >
+    <button onclick="processArray()">Remove Duplicates</button>
+    <p id="result"></p>
+</body>
+</html>

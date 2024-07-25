@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: green;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Clear previous error messages
+            const errorElements = document.getElementsByClassName('error');
+            for (let element of errorElements) {
+                element.textContent = '';
+            }
+
+            // Validate Name
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Name is required';
+                isValid = false;
+            }
+
+            // Validate Email
+            const email = document.getElementById('email').value.trim();
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            }
+
+            // Validate Message
+            const message = document.getElementById('message').value.trim();
+            if (message === '') {
+                document.getElementById('messageError').textContent = 'Message is required';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function submitForm(event) {
+            if (!validateForm()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span id="nameError" class="error"></span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <span id="messageError" class="error"></span><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

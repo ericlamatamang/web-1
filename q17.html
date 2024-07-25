@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Example</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Media queries for responsive layout */
+        @media only screen and (min-width: 768px) {
+            /* Adjust layout for medium screens */
+            .content {
+                width: 50%;
+                float: left;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            /* Adjust layout for large screens */
+            .content {
+                width: 33.33%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <h2>Responsive Layout</h2>
+        <p>This is a responsive layout example. The content width changes based on the screen size.</p>
+    </div>
+    <div class="content">
+        <h2>Responsive Layout</h2>
+        <p>This is a responsive layout example. The content width changes based on the screen size.</p>
+    </div>
+    <div class="content">
+        <h2>Responsive Layout</h2>
+        <p>This is a responsive layout example. The content width changes based on the screen size.</p>
+    </div>
+</div>
+
+</body>
+</html>
